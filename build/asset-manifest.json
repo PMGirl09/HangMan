@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.225aabe1.js",
-    "static/js/787.20ace30e.chunk.js": "/static/js/787.20ace30e.chunk.js",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.225aabe1.js.map": "/static/js/main.225aabe1.js.map",
-    "787.20ace30e.chunk.js.map": "/static/js/787.20ace30e.chunk.js.map"
+    "main.css": "/HangMan/build/static/css/main.c4e32d9f.css",
+    "main.js": "/HangMan/build/static/js/main.3dcd91c8.js",
+    "static/js/787.20ace30e.chunk.js": "/HangMan/build/static/js/787.20ace30e.chunk.js",
+    "index.html": "/HangMan/build/index.html",
+    "main.c4e32d9f.css.map": "/HangMan/build/static/css/main.c4e32d9f.css.map",
+    "main.3dcd91c8.js.map": "/HangMan/build/static/js/main.3dcd91c8.js.map",
+    "787.20ace30e.chunk.js.map": "/HangMan/build/static/js/787.20ace30e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.225aabe1.js"
+    "static/css/main.c4e32d9f.css",
+    "static/js/main.3dcd91c8.js"
   ]
 }
