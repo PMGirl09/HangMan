@@ -28,26 +28,23 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         return (
             <Paper elevation={24}>
-                <Typography component="legend">Rate this question!</Typography>
-                <Rating
-                    name="simple-controlled"
-                    precision={0.5}
-                    defaultValue={4}
-                />
+                <Typography component="h1" fontFamily={'Aladin'} fontSize={46}>FinQuiz!</Typography>
                 <Typography>
                     {this.question}
                 </Typography>
                 <TransitionGroup enter={true}>
-                    {(this.state.currentState >= States.FIRST_GUESS) && <Typography>
+                    {(this.state.currentState >= States.FIRST_GUESS) && <><br/><Typography>
                         {"Hint 1: " + this.hint1}
                     </Typography>
+                    <br/>
+                    </>
                     }
-                    {(this.state.currentState >= States.SECOND_GUESS) && <Typography>
+                    {(this.state.currentState >= States.SECOND_GUESS) && <><Typography>
                         {"Hint 2: " + this.hint2}
-                    </Typography>}
-                    {(this.state.currentState === States.SUCCESS) && <Typography>
+                    </Typography><br/></>}
+                    {(this.state.currentState === States.SUCCESS) && <><Typography>
                         {this.successText}
-                    </Typography>}
+                    </Typography><br/></>}
                     {(this.state.currentState === States.FAIL) && <Typography>
                         {this.errorText}
                     </Typography>}
@@ -55,10 +52,13 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
                 {(this.state.currentState === States.FAIL || this.state.currentState === States.SUCCESS) && <Typography>
                     {this.explaination}
                 </Typography>}
-                <Input size={"medium"} style={{ paddingRight: "20px" }} value={this.state.answer} onChange={(ev) => this.handleChange(ev)}></Input>
-                <Button variant="contained" style={{ paddingLeft: "20px" }} onClick={() => this.evalAnswer()} startIcon={<SendIcon />}>
-                    Submit
-                </Button>
+                <div style={{display: "flex", justifyContent: "center", columnGap: "20px", paddingBottom: "20px", paddingTop: "20px"}}>
+                    <Input size={"medium"} style={{ paddingRight: "20px" }} value={this.state.answer} onChange={(ev) => this.handleChange(ev)}></Input>
+                    <Button variant="contained" style={{ paddingLeft: "20px" }} onClick={() => this.evalAnswer()} startIcon={<SendIcon />}>
+                        Submit
+                    </Button>
+                    <br/>
+                </div>
             </Paper>
         );
     }
