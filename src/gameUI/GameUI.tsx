@@ -21,13 +21,13 @@ enum States {
     FAIL
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean }> {
-    private question: String = "How can you make money on stocks you hold apart from their price going up ?";
+    private question: String = "How can you make money on stocks you hold, apart from their price going up?";
     private answers: Array<String> = ["Dividends", "Dividend"];
     private hint1: String = "As companies make profit, they give back profits to their shareholders this way";
     private hint2: String = "Starts with letters Div";
-    private successText = "You did it !🎉";
+    private successText = "You did it ! Yes Girl! 🌠";
     private errorText = "No despair!";
-    private explaination: String = "Dividends are a way you can make money on stocks you hold, as companies make profit they share their profit with shareholders via quaterly dividents. ";
+    private explaination: String = "Dividends are a way you can make money on stocks you hold, as companies make profit they share their profit with shareholders via quaterly dividends. ";
     constructor(props: {}) {
         super(props);
         this.state = { currentState: States.START, answer: "", open: false};
@@ -36,7 +36,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
         const {currentState, open} = this.state;
         return (
             <Paper elevation={4}>
-                <Typography component="h1" fontFamily={'Aladin'} fontSize={46} fontStyle={{color: 'Purple'}}>FinQuiz!</Typography>
+                <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
                 <Typography style={{paddingBottom: "20px"}}>
                     {this.question}
                 </Typography>
@@ -74,8 +74,8 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
                     >
                         <Input size={"medium"} 
                         value={this.state.answer} onChange={(ev) => this.handleChange(ev)}></Input>
-                        <Button variant="contained" onClick={() => this.evalAnswer()} startIcon={<SendIcon />}>
-                        <Typography component="h1" fontFamily={'Aladin'} fontSize={30} fontStyle={{color: 'yellow'}}>Submit!</Typography>
+                        <Button variant="contained" onClick={() => this.evalAnswer()} startIcon={<SendIcon />} color={'secondary'}>
+                        <Typography component="h1" fontFamily={'verdana'} fontSize={16} fontStyle={{color: 'white'}} fontWeight={400}>Submit!</Typography>
                         </Button>
                     </Grid>
                     <br/>
