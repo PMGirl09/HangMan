@@ -35,7 +35,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         const {currentState, open} = this.state;
         return (
-            <Paper elevation={4} style={{width:"900px", height:"500px", paddingTop: "200px"}}>
+            <Paper elevation={4} style={{width:"900px", height:"400px", paddingTop: "180px"}}>
                 <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
                 <Typography style={{paddingBottom: "20px", paddingTop: "30px"}}>
                     {this.question}
