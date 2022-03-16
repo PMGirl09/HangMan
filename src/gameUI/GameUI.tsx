@@ -35,9 +35,9 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         const {currentState, open} = this.state;
         return (
-            <Paper elevation={4} style={{width:"80%", height:"500px", alignItems: "center"}}>
+            <Paper elevation={4} style={{width:"800px", height:"300px", alignContent: "center", alignSelf: "center",justifyContent: "center"}}>
                 <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
-                <Typography style={{paddingBottom: "20px"}}>
+                <Typography style={{paddingBottom: "20px", paddingTop: "20px"}}>
                     {this.question}
                 </Typography>
                 {(this.state.currentState === States.FIRST_GUESS) && <><br/><Typography>
