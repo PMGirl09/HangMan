@@ -22,7 +22,7 @@ enum States {
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean }> {
     private question: String = "How can you make money on stocks you hold, apart from their price going up?";
-    private answers: Array<String> = ["Dividends", "Dividend"];
+    private answers: Array<String> = ["Dividends", "Dividend", "cost basis", "Cost Basis", "Cost basis", "cost Basis", "costbasis", "CostBasis"];
     private hint1: String = "As companies make profit, they give back profits to their shareholders this way";
     private hint2: String = "Starts with letters Div";
     private successText = "You did it ! Yes Girl! 🌠";
@@ -35,9 +35,9 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         const {currentState, open} = this.state;
         return (
-            <Paper elevation={4} style={{width:"800px", height:"300px", alignContent: "center", alignSelf: "center",justifyContent: "center",paddingTop: "50px"}}>
+            <Paper elevation={4} style={{width:"800px", height:"600px", alignContent: "center", alignSelf: "center",justifyContent: "center",paddingTop: "200px"}}>
                 <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
-                <Typography style={{paddingBottom: "20px", paddingTop: "20px"}}>
+                <Typography style={{paddingBottom: "20px", paddingTop: "30px"}}>
                     {this.question}
                 </Typography>
                 {(this.state.currentState === States.FIRST_GUESS) && <><br/><Typography>
