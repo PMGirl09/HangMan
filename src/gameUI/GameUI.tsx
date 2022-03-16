@@ -35,7 +35,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         const {currentState, open} = this.state;
         return (
-            <Paper elevation={4}>
+            <Paper elevation={4} style={{width:"100%", height:"600px"}}>
                 <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
                 <Typography style={{paddingBottom: "20px"}}>
                     {this.question}
@@ -74,7 +74,8 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
                     >
                         <Input size={"medium"} 
                         value={this.state.answer} onChange={(ev) => this.handleChange(ev)}></Input>
-                        <Button variant="contained" onClick={() => this.evalAnswer()} startIcon={<SendIcon />} color={'secondary'}>
+                        <span style={{width: "15px"}}></span>
+                        <Button variant="contained" onClick={() => this.evalAnswer()} color={'secondary'}>
                         <Typography component="h1" fontFamily={'verdana'} fontSize={16} fontStyle={{color: 'white'}} fontWeight={400}>Submit!</Typography>
                         </Button>
                     </Grid>
