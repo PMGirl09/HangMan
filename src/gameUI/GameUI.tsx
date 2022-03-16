@@ -25,7 +25,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     private answers: Array<String> = ["Dividends", "Dividend", "cost basis", "Cost Basis", "Cost basis", "cost Basis", "costbasis", "CostBasis"];
     private hint1: String = "As companies make profit, they give back profits to their shareholders this way";
     private hint2: String = "Starts with letters Div";
-    private successText = "You did it ! Yes Girl! 🌠";
+    private successText = "Nice , you did it!🌠";
     private errorText = "No despair!";
     private explaination: String = "Dividends are a way you can make money on stocks you hold, as companies make profit they share their profit with shareholders via quaterly dividends. ";
     constructor(props: {}) {
@@ -35,7 +35,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     render(): React.ReactNode {
         const {currentState, open} = this.state;
         return (
-            <Paper elevation={4} style={{width:"100%", height:"500px", paddingTop: "200px"}}>
+            <Paper elevation={4} style={{width:"900px", height:"500px", paddingTop: "200px"}}>
                 <Typography component="h1" fontFamily={'Aladin'} fontSize={40} fontStyle={{color: 'Purple'}} fontWeight={200}>PennyUp: The Game</Typography>
                 <Typography style={{paddingBottom: "20px", paddingTop: "30px"}}>
                     {this.question}
