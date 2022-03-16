@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/HangMan/build/static/css/main.99ec2b54.css",
-    "main.js": "/HangMan/build/static/js/main.4d702243.js",
+    "main.js": "/HangMan/build/static/js/main.fd895ae1.js",
     "static/js/787.20ace30e.chunk.js": "/HangMan/build/static/js/787.20ace30e.chunk.js",
     "static/media/aladin-all-400-normal.woff": "/HangMan/build/static/media/aladin-all-400-normal.b8af8ab7b84c462783c0.woff",
     "static/media/aladin-latin-400-normal.woff2": "/HangMan/build/static/media/aladin-latin-400-normal.e72ccc7e8b15e1a27c6c.woff2",
     "static/media/aladin-latin-ext-400-normal.woff2": "/HangMan/build/static/media/aladin-latin-ext-400-normal.9e11a71697d74ab039db.woff2",
     "index.html": "/HangMan/build/index.html",
     "main.99ec2b54.css.map": "/HangMan/build/static/css/main.99ec2b54.css.map",
-    "main.4d702243.js.map": "/HangMan/build/static/js/main.4d702243.js.map",
+    "main.fd895ae1.js.map": "/HangMan/build/static/js/main.fd895ae1.js.map",
     "787.20ace30e.chunk.js.map": "/HangMan/build/static/js/787.20ace30e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99ec2b54.css",
-    "static/js/main.4d702243.js"
+    "static/js/main.fd895ae1.js"
   ]
 }
