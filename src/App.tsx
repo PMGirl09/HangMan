@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import "@fontsource/aladin"
+import "@fontsource/alike"
 //import "@fontsource/fuzzy-bubbles"
 import { GameUI } from './gameUI/GameUI';
 
