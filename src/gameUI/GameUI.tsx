@@ -21,13 +21,13 @@ enum States {
     FAIL
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean }> {
-    private question: String = "How can you make money on stocks you hold, apart from their price going up?";
-    private answers: Array<String> = ["Dividends", "Dividend"];
-    private hint1: String = "As companies make profit, they give back profits to their shareholders this way";
-    private hint2: String = "Starts with letters Div";
-    private successText = "To earn one point in our challenge, make sure to screenshot this page and DM @PennyUp on our exclusive Discord. Discord access below.  ";
+    private question: String = "What do you look at to determine the value of a company relative to it's earnings?";
+    private answers: Array<String> = ["P/E Ratio", "PE Ratio","P/ERatio","PERatio",""];
+    private hint1: String = "This let's you know if a company is undervalued or overvalued";
+    private hint2: String = "You can find this ratio on your stock quote";
+    private successText = "To earn one point in our challenge, make sure to screenshot this page and DM @PennyUp on our exclusive Discord.Discord access below..";
     private errorText = "No despair!";
-    private explaination: String = "Dividends are a way you can make money on stocks you hold, as companies make profit they share their profit with shareholders via quaterly dividends. ";
+    private explaination: String = "P/E ratios are used by investors and analysts to determine the relative value of a company's shares in an apples-to-apples comparison.A high P/E ratio could mean that a company's stock is overvalued,or else that investors are expecting high growth rates in the future.";
     constructor(props: {}) {
         super(props);
         this.state = { currentState: States.START, answer: "", open: false};
