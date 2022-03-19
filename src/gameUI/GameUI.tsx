@@ -21,13 +21,13 @@ enum States {
     FAIL
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean }> {
-    private question: String = "What do you look at to determine the value of a company relative to it's earnings?";
-    private answers: Array<String> = ["P/E Ratio", "PE Ratio","P/ERatio","PERatio",""];
-    private hint1: String = "This let's you know if a company is undervalued or overvalued";
-    private hint2: String = "You can find this ratio on your stock quote";
+    private question: String = "What is the original value or purchase price of an investment for tax purposes?";
+    private answers: Array<String> = ["Cost Basis","Costbasis","costBasis","CostBasis","Cost basis","cost Basis"];
+    private hint1: String = "This is used to calculate the capital gains tax rate from your investment";
+    private hint2: String = "It is made up of two words";
     private successText = "To earn one point in our challenge, make sure to screenshot this page and DM @PennyUp on our exclusive Discord.Discord access below..";
     private errorText = "No despair!";
-    private explaination: String = "P/E ratios are used by investors and analysts to determine the relative value of a company's shares in an apples-to-apples comparison.A high P/E ratio could mean that a company's stock is overvalued,or else that investors are expecting high growth rates in the future.";
+    private explaination: String = "Cost basis is the original value or purchase price of an asset or investment for tax purposes and used to calculate the capital gains tax rate, which is the difference between the asset's cost basis and current market value.";
     constructor(props: {}) {
         super(props);
         this.state = { currentState: States.START, answer: "", open: false};
