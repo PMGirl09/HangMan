@@ -20,7 +20,7 @@ enum States {
     SUCCESS,
     FAIL
 }
-export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean }> {
+export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean, userid: string }> {
     private question: String = "What is the original value or purchase price of an investment for tax purposes?";
     private answers: Array<String> = ["Cost Basis","Costbasis","costBasis","CostBasis","Cost basis","cost Basis"];
     private hint1: String = "This is used to calculate the capital gains tax rate from your investment";
@@ -30,7 +30,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
     private explaination: String = "Cost basis is the original value or purchase price of an asset or investment for tax purposes and used to calculate the capital gains tax rate, which is the difference between the asset's cost basis and current market value.";
     constructor(props: {}) {
         super(props);
-        this.state = { currentState: States.START, answer: "", open: false};
+        this.state = { currentState: States.START, answer: "", open: false, userid: this.uuidv4()};
     }
     render(): React.ReactNode {
         const {currentState, open} = this.state;
@@ -109,6 +109,21 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
             </Paper>
         );
     }
+    private uuidv4():string {
+        var d = new Date().getTime();//Timestamp
+        var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now()*1000)) || 0;//Time in microseconds since page-load or 0 if unsupported
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16;//random number between 0 and 16
+            if(d > 0){//Use timestamp until depleted
+                r = (d + r)%16 | 0;
+                d = Math.floor(d/16);
+            } else {//Use microseconds since page-load if supported
+                r = (d2 + r)%16 | 0;
+                d2 = Math.floor(d2/16);
+            }
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    }
     private retry() {
         this.setState({answer: "", currentState: this.state.currentState + 1, open: false });
     }
@@ -125,13 +140,13 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
         fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
         method: "POST",
         body: JSON.stringify({
-            client_id: 'XXXXXXXXXX',
+            client_id: this.state.userid,
             events: [{
             name: 'post_score',
             params:  {
                 score: 1,
-                level: this.state.currentState,
-                character: "Player"
+                level: this.state.userid,
+                character: this.state.userid
               },
             }]
         })
@@ -139,9 +154,9 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
         fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
         method: "POST",
         body: JSON.stringify({
-            client_id: 'XXXXXXXXXX',
+            client_id: this.state.userid,
             events: [{
-            name: 'pay_attempt',
+            name: 'play_attempt',
             params:  {
               },
             }]
@@ -162,7 +177,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
             fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
             method: "POST",
             body: JSON.stringify({
-                client_id: 'XXXXXXXXXX',
+                client_id: this.state.userid,
                 events: [{
                 name: 'play_success',
                 params:  {
