@@ -21,13 +21,13 @@ enum States {
     FAIL
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean, userid: string }> {
-    private question: String = "What is the original value or purchase price of an investment for tax purposes?";
-    private answers: Array<String> = ["Cost Basis","Costbasis","costBasis","CostBasis","Cost basis","cost Basis"];
-    private hint1: String = "This is used to calculate the capital gains tax rate from your investment";
-    private hint2: String = "It is made up of two words";
+    private question: String = "How can you access profits from real estate assets without buying a physical property and having to deal with landlord issues?";
+    private answers: Array<String> = ["REITS","REIT"];
+    private hint1: String = "These investment vehicles offer a low-cost way on the stock market to offer an invest in real estate";
+    private hint2: String = "These have one of the highest paying dividends in the stock market ";
     private successText = "To earn one point in our challenge, make sure to screenshot this page and DM @PennyUp on our exclusive Discord.Discord access below..";
     private errorText = "No despair!";
-    private explaination: String = "Cost basis is the original value or purchase price of an asset or investment for tax purposes and used to calculate the capital gains tax rate, which is the difference between the asset's cost basis and current market value.";
+    private explaination: String = "Real estate investment trusts (“REITs”) allow individuals to invest in large-scale, income-producing real estate. A REIT is a company that owns and typically operates income-producing real estate or related assets. These may include office buildings, shopping malls, apartments, hotels, resorts, self-storage facilities, warehouses, and mortgages or loans.Source - investor.gov";
     constructor(props: {}) {
         super(props);
         this.state = { currentState: States.START, answer: "", open: false, userid: this.uuidv4()};
