@@ -145,7 +145,7 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
             name: 'post_score',
             params:  {
                 score: 1,
-                level: this.state.userid,
+                level: this.state.currentState,
                 character: this.state.userid
               },
             }]
