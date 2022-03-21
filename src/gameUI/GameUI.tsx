@@ -119,6 +119,19 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
         this.setState({ answer: event.target.value });
     }
     private evalAnswer() {
+        const measurement_id = `G-FJBVQRRG4H`;
+        const api_secret = `8Dr-wIp-TjKsItiGH1hoqA`;
+
+        fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+        method: "POST",
+        body: JSON.stringify({
+            client_id: 'XXXXXXXXXX',
+            events: [{
+            name: 'play_attempt',
+            params: {},
+            }]
+        })
+        });
         if (this.state.answer && this.answers.some(a => a.toLowerCase() === this.state.answer.toLowerCase())) {
             this.setState({ currentState: States.SUCCESS });
             confetti({
