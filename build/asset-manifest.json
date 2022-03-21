@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/HangMan/build/static/css/main.66686c03.css",
-    "main.js": "/HangMan/build/static/js/main.56840be8.js",
+    "main.js": "/HangMan/build/static/js/main.8c6930a7.js",
     "static/js/787.20ace30e.chunk.js": "/HangMan/build/static/js/787.20ace30e.chunk.js",
     "static/media/alike-all-400-normal.woff": "/HangMan/build/static/media/alike-all-400-normal.1c5a914c0931b2bafad2.woff",
     "static/media/alike-latin-400-normal.woff2": "/HangMan/build/static/media/alike-latin-400-normal.38d92e3d4b8cb0bac3a5.woff2",
     "index.html": "/HangMan/build/index.html",
     "main.66686c03.css.map": "/HangMan/build/static/css/main.66686c03.css.map",
-    "main.56840be8.js.map": "/HangMan/build/static/js/main.56840be8.js.map",
+    "main.8c6930a7.js.map": "/HangMan/build/static/js/main.8c6930a7.js.map",
     "787.20ace30e.chunk.js.map": "/HangMan/build/static/js/787.20ace30e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66686c03.css",
-    "static/js/main.56840be8.js"
+    "static/js/main.8c6930a7.js"
   ]
 }

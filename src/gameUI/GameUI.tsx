@@ -127,12 +127,28 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
         body: JSON.stringify({
             client_id: 'XXXXXXXXXX',
             events: [{
-            name: 'play_attempt',
-            params: {},
+            name: 'post_score',
+            params:  {
+                score: 1,
+                level: this.state.currentState,
+                character: "Player"
+              },
+            }]
+        })
+        });
+        fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+        method: "POST",
+        body: JSON.stringify({
+            client_id: 'XXXXXXXXXX',
+            events: [{
+            name: 'pay_attempt',
+            params:  {
+              },
             }]
         })
         });
         if (this.state.answer && this.answers.some(a => a.toLowerCase() === this.state.answer.toLowerCase())) {
+            const attemptBeforeSuccess = this.state.currentState;
             this.setState({ currentState: States.SUCCESS });
             confetti({
                 shapes: ['square'],
@@ -142,6 +158,18 @@ export class GameUI extends React.Component<{}, { currentState: States, answer: 
                     y: (1),
                     x: (0.5)
                 }
+            });
+            fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+            method: "POST",
+            body: JSON.stringify({
+                client_id: 'XXXXXXXXXX',
+                events: [{
+                name: 'play_success',
+                params:  {
+                    attempt: attemptBeforeSuccess
+                },
+                }]
+            })
             });
         } else {
             if (this.state.currentState < States.SECOND_GUESS) {
