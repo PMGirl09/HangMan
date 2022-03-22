@@ -21,13 +21,13 @@ enum States {
     FAIL
 }
 export class GameUI extends React.Component<{}, { currentState: States, answer: String, open: boolean, userid: string }> {
-    private question: String = "What is a collection of hundreds or thousands of stocks or bonds in a single fund?";
-    private answers: Array<String> = ["ETF","ETFS"];
-    private hint1: String = "This trades on major stock exchanges";
-    private hint2: String = "You may have seen this on the New York Stock Exchange or NASDAQ ";
+    private question: String = "What is the nominal yield paid by a fixed-income security";
+    private answers: Array<String> = ["Coupon rate","Couponrate","Coupon Rate","coupon Rate","couponrate","CouponRate","couponRate"];
+    private hint1: String = "It is the nominal yield a bond is stated to pay on its issue date";
+    private hint2: String = "It is calculated by dividing the sum of the security's annual coupon payments and dividing them by the bond's par value";
     private successText = "To earn one point in our challenge, make sure to screenshot this page and DM @PennyUp on our exclusive Discord.Discord access below..";
     private errorText = "No despair!";
-    private explaination: String = "An ETF is a collection of hundreds or thousands of stocks or bonds, managed by experts, in a single fund that trades on major stock exchanges, like the New York Stock Exchange and NASDAQ";
+    private explaination: String = "The coupon rate, or coupon payment, is the nominal yield the bond is stated to pay on its issue date. This yield changes as the value of the bond changes, thus giving the bond's yield to maturity (YTM). A bond's coupon rate can be calculated by dividing the sum of the security's annual coupon payments and dividing them by the bond's par value. For example, a bond issued with a face value of $1,000 that pays a $25 coupon semiannually has a coupon rate of 5%. All else held equal, bonds with higher coupon rates are more desirable for investors than those with lower coupon rates.";
     constructor(props: {}) {
         super(props);
         this.state = { currentState: States.START, answer: "", open: false, userid: this.uuidv4()};
